@@ -1,38 +1,67 @@
-// Exibe um alerta de boas vindas.
-alert("Boas vindas ao nosso site!");
+// Pergunta o dia da semana e verifica o fim de semana.
+function verificarFimDeSemana() {
+  const diaDaSemana = prompt("Qual é o dia da semana?");
 
-// Declara uma variável chamada nome e atribui a ela o valor "Lua".
-let nome = "Lua";
+  if (diaDaSemana === "Sábado" || diaDaSemana === "Domingo") {
+    alert("Bom fim de semana!");
+  } else {
+    alert("Boa semana!");
+  }
+}
 
-// Cria uma variável chamada idade e atribui a ela o valor 25.
-let idade = 25;
+// Verifica se um número é positivo ou negativo.
+function verificarNumero() {
+  const numero = parseFloat(prompt("Digite um número:"));
 
-// Define uma variável numeroDeVendas e atribui a ela o valor 50.
-let numeroDeVendas = 50;
+  if (isNaN(numero)) {
+    alert("Por favor, digite um número válido.");
+    return; // Sai da função se a entrada não for válida
+  }
 
-// Define uma variável saldoDisponivel e atribui a ela o valor 1000.
-let saldoDisponivel = 1000;
+  if (numero > 0) {
+    alert("Número positivo.");
+  } else if (numero < 0) {
+    alert("Número negativo.");
+  } else {
+    alert("Número zero.");
+  }
+}
 
-// Exibe um alerta com o texto "Erro! Preencha todos os campos".
-alert("Erro! Preencha todos os campos");
+// Sistema de pontuação do jogo.
+function sistemaDePontuacao() {
+  const pontuacao = parseInt(prompt("Digite a pontuação do jogo:"));
 
-// Declara uma variável chamada mensagemDeErro e atribui a ela o valor "Erro! Preencha todos os campos".
-let mensagemDeErro = "Erro! Preencha todos os campos";
+    if (isNaN(pontuacao)) {
+        alert("Por favor, digite uma pontuação válida.");
+        return;
+    }
 
-// Agora exibe um alerta com o valor da variável mensagemDeErro.
-alert(mensagemDeErro);
+  if (pontuacao >= 100) {
+    alert("Parabéns, você venceu!");
+  } else {
+    alert("Tente novamente para ganhar.");
+  }
+}
 
-// Usa um prompt para perguntar o nome do usuário e armazená-lo na variável nome.
-nome = prompt("Digite seu nome:");
+// Mensagem de saldo da conta com template string.
+function mostrarSaldo() {
+  const saldo = parseFloat(prompt("Digite o saldo da sua conta:"));
 
-// Pede ao usuário para digitar sua idade usando um prompt e armazena-a na variável idade.
-idade = parseInt(prompt("Digite sua idade:")); // Converte a string para um número inteiro
+    if (isNaN(saldo)) {
+        alert("Por favor, digite um saldo válido.");
+        return;
+    }
 
-// Agora, caso a idade seja maior ou igual que 18, exiba um alerta com a mensagem "Pode tirar a habilitação!".
-if (idade >= 18) {
-    alert("Pode tirar a habilitação!");
-} else if (!isNaN(idade)){ //verifica se a idade é um numero e se for menor que 18 exibe a mensagem abaixo
-    alert("Você ainda não pode tirar habilitação.");
-} else{ //caso a idade não seja um numero exibe o alerta abaixo
-    alert("Por favor, digite uma idade válida.");
+  alert(`Seu saldo é de R$${saldo.toFixed(2)}.`); // Formatando para duas casas decimais
+}
+
+// Pede o nome do usuário e mostra um alerta de boas-vindas.
+function boasVindas() {
+  const nome = prompt("Digite seu nome:");
+
+  if (nome) { // Verifica se o usuário digitou algo
+      alert(`Bem-vindo(a), ${nome}!`);
+  } else {
+      alert("Por favor, insira seu nome.");
+  }
 }
